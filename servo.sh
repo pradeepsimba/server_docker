@@ -2,9 +2,9 @@
 # Build the Docker image once
 docker build -t myimage .
 
-# Run the container 20 times
+# Run the container 20 times in detached mode
 for i in {1..20}
 do
-   docker run --name mycontainer_$i myimage
+   docker run -d --name mycontainer_$i myimage
    # docker rm mycontainer_$i
 done
